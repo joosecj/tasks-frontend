@@ -49,7 +49,7 @@ public class TasksController {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			restTemplate.postForObject(
-					getBackendURL() + "/tasks-backend/todo", todo, Object.class);			
+					getBackendURL() + "/tasks-back/todo", todo, Object.class);
 			model.addAttribute("sucess", "Sucess!");
 			return "index";
 		} catch(Exception e) {
