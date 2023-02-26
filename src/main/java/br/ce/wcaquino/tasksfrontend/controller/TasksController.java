@@ -67,7 +67,7 @@ public class TasksController {
 	@GetMapping("delete/{id}")
 	public String delete(@PathVariable Long id, Model model) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.delete(getBackendURL() + "/tasks-backend/todo/" + id);			
+		restTemplate.delete(getBackendURL() + "/tasks-back/todo/" + id);
 		model.addAttribute("success", "Success!");
 		model.addAttribute("todos", getTodos());
 		return "index";
@@ -78,6 +78,6 @@ public class TasksController {
 	private List<Todo> getTodos() {
 		RestTemplate restTemplate = new RestTemplate();
 		return restTemplate.getForObject(
-				getBackendURL() + "/tasks-backend/todo", List.class);
+				getBackendURL() + "/tasks-back/todo", List.class);
 	}
 }
